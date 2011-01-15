@@ -1,0 +1,46 @@
+* NAME
+  
+  dformat.awk - A Program for Typesetting Data Formats.
+     
+* DESCRIPTION
+
+#+srcname: example
+#+begin_src sh
+  cat > structure <<'EOF'
+  .begin dformat
+  style bitwid .3
+  PDP-8 Instr
+          0-2 Op code
+          3 Indirect Bit
+          4 Page-Zero Bit
+          5-11 Page Address
+  .end
+  EOF
+  
+  dformat.awk < structure > structure.pic
+  pic structure.ms | groff -ms -T ps > structure.ps
+  
+#+end_src
+  
+* VERSION
+  
+This refers to version 0.1.
+
+* USAGE
+  
+Check internet for the =142.ps.gz= file which is the official manual.
+The title is "dformat - A Program for Typesetting Data Formats." by
+Jon L. Bentley.
+  
+* AUTHOR
+  
+Jon L. Bentley at Bell Labs in April 1988.  
+  
+* COPYRIGHT
+  
+Unsure of the copyright, not sure to have the right to put it in my
+github repository.  Whatever ...
+  
+# DFORMAT -- 
+# CSTR #142, Jon L. Bentley, Bell Labs, April 1988.
+# 142.ps.gz
