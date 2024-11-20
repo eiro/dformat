@@ -1,46 +1,19 @@
-* NAME
-  
-  dformat.awk - A Program for Typesetting Data Formats.
-     
-* DESCRIPTION
+Usable version of the code described in the article
 
-#+srcname: example
-#+begin_src sh
-  cat > structure <<'EOF'
-  .begin dformat
-  style bitwid .3
-  PDP-8 Instr
-          0-2 Op code
-          3 Indirect Bit
-          4 Page-Zero Bit
-          5-11 Page Address
-  .end
-  EOF
-  
-  dformat.awk < structure > structure.pic
-  pic structure.ms | groff -ms -T ps > structure.ps
-  
-#+end_src
-  
-* VERSION
-  
-This refers to version 0.1.
+	DFORMAT --
+	CSTR #142, Jon L. Bentley, Bell Labs, April 1988.
+	142.ps.gz
 
-* USAGE
-  
-Check internet for the =142.ps.gz= file which is the official manual.
-The title is "dformat - A Program for Typesetting Data Formats." by
-Jon L. Bentley.
-  
-* AUTHOR
-  
-Jon L. Bentley at Bell Labs in April 1988.  
-  
-* COPYRIGHT
-  
-Unsure of the copyright, not sure to have the right to put it in my
-github repository.  Whatever ...
-  
-# DFORMAT -- 
-# CSTR #142, Jon L. Bentley, Bell Labs, April 1988.
-# 142.ps.gz
+# USAGE
+
+* copy `dformat` in your `$PATH` or in your paper directory
+* dformat is an awk script. both examples are working
+
+	< eg/pdp8 dformat | groff -epTpdf > pdf8.pdf
+	dformat eg/pdp8   | groff -epTpdf > pdf8.pdf
+
+# TODO
+
+* the git history in the AUTHORS
+* fix the licence issue. GPL removed as there was no agreement of the original author
+* better Make install and decent man page

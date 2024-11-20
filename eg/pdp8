@@ -1,0 +1,8 @@
+.begin dformat
+style bitwid .3
+PDP-8 Instr
+	0-2 Op code
+	3 Indirect Bit
+	4 Page-Zero Bit
+	5-11 Page Address
+.end
